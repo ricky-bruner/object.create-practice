@@ -20,7 +20,7 @@ const advisor = Object.create(null, {
         writable: true
     },
     specialty:{
-        value: "Goblin's",
+        value: "Goblin Liason",
         enumerable: true,
         writeable: true
     },
@@ -35,25 +35,25 @@ const advisor = Object.create(null, {
                 symbol: "CBR",
                 name: "Curse Breaking Inc",
                 shares: 450,
-                valuation: 34567891,
+                valuation: 8.5
             },
             {
                 symbol: "FDE",
                 name: "Fighting Death Eaters, LLC",
                 shares: 231,
-                valuation: 4563728
+                valuation: 22.5
             },
             {
                 symbol: "SWA",
                 name: "Surviving a werewolf attack, LLC",
                 shares: 798,
-                valuation: 89000
+                valuation: 14.8
             },
             {
                 symbol: "WWW",
                 name: "Weasley's Wizarding Wheezes Co.",
                 shares: 2300,
-                valuation: 1000000000
+                valuation: 258.6
             }
         ],
         enumerable: false,
@@ -99,37 +99,31 @@ const advisor = Object.create(null, {
 
 });
 
-advisor.sell("WWW", "Weasley's Wizarding Wheezes Co.", 2300, 1000000000);
+
 console.log(advisor.worth());
 console.log(advisor)
 
 
 
-// advisor.purchase("GUP", "Growing Up Poor", 1, 10);
-// console.log(advisor);
+let body = document.querySelector("body");
 
+function createMainContent(){
+    let script = document.querySelector("script");
+    let mainContent = document.createElement("div");
+    mainContent.setAttribute("id", "main-content");
+    body.insertBefore(mainContent, script);
+}
+createMainContent();
 
-    
+const mainContent = document.getElementById("main-content");
 
-// if(symbol === advisor.porfolio[symbol])
-
-
-
-
-
-
-// let newPortfolio = {
-//     symbol: "GUP",
-//     name: "Growing up poor",
-//     shares: 1,
-//     valuation: 12
-// };
-
-// function addPortfolio(){
-//     advisor.portfolio.push(newPortfolio);
-// }
-// addPortfolio();
-// console.log(advisor);
-
-// let value = advisor.portfolio[2];
-// console.log(value);
+mainContent.innerHTML += 
+    `<div>
+        <h1>Wizdaq&trade; Profile</h1>
+        <div>
+            <h2>Advisor Spotlight</h2>
+            <h3>Name: ${advisor.name}</h3>
+            <h4>Conpany: ${advisor.company}</h4>
+            <h4>Specialty: ${advisor.specialty}</h4>
+        </div>
+    </div>`
