@@ -15,17 +15,23 @@
 
 const advisor = Object.create(null, {
     company:{
-        value: "Gringotts",
+        value: {
+            name:"Gringotts Wizarding Bank",
+            image: "images/gringotts.jpg"
+        },
         enumerable: true,
         writable: true
     },
     specialty:{
-        value: "Goblin Liason",
+        value: ["Goblin Liason", "Curse Breaking", "Investing"],
         enumerable: true,
         writeable: true
     },
     name:{
-        value: "Bill Weasley",
+        value: {
+            name: "Bill Weasley",
+            image: ["images/billweasley.jpg", "images/billweasley2", "images/billweasley3"]
+        },
         enumerable: true,
         writable: false
     },
